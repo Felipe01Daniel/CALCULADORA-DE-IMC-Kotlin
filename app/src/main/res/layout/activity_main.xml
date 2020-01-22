@@ -11,9 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:text="Calculadora IMC"
         android:textColor="#299CEC"
         android:textSize="50sp"
@@ -25,11 +23,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtTeste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="PESO"
         android:textColor="#FFFFFF"
@@ -49,13 +47,13 @@
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTeste" />
 
     <View
         android:id="@+id/view"
         android:layout_width="80dp"
         android:layout_height="46dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="41dp"
         android:layout_marginEnd="16dp"
         android:background="#299CEC"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +101,7 @@
         android:layout_width="274dp"
         android:layout_height="53dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#FFFFFF"
         android:spinnerMode="dropdown"
@@ -113,33 +111,34 @@
 
     <Button
         android:id="@+id/btnCalcular"
-        android:layout_width="201dp"
-        android:layout_height="70dp"
+        android:layout_width="265dp"
+        android:layout_height="75dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="#299CEC"
         android:text="CALCULAR"
         android:textColor="#F2000000"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnResultado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spnSexo" />
 
     <Button
         android:id="@+id/btnTabela"
-        android:layout_width="201dp"
-        android:layout_height="70dp"
+        android:layout_width="266dp"
+        android:layout_height="47dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:background="#299CEC"
         android:text="TABELA"
         android:textColor="#DD090808"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtPeso"
@@ -158,7 +157,7 @@
         android:id="@+id/txtAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="130"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -166,5 +165,19 @@
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <Button
+        android:id="@+id/btnResultado"
+        android:layout_width="266dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#299CEC"
+        android:text="RESULTADOS"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTabela"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

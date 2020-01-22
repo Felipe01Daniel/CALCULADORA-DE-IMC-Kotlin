@@ -44,19 +44,21 @@ class MainActivity : AppCompatActivity() {
         })
 
         //SeekBar Altura
-        seekAltura = findViewById(R.id.seekBarAltura) as SeekBar
-        textAltura = findViewById(R.id.txtAltura) as TextView
+        seekAltura = findViewById<SeekBar>(R.id.seekBarAltura)
+        textAltura = findViewById<TextView>(R.id.txtAltura)
         seekAltura.max = 200
 
         seekAltura.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                textAltura.text = progress.toString()
+                var valor_float = "%.2f".format((progress*0.01))
+                textAltura.text = valor_float
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
             }
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
+
 
         //Button Calcular
         btnCalcular.setOnClickListener {
@@ -70,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Voce precisa selecionar altura, peso e sexo", Toast.LENGTH_LONG).show()
             }else{
                 var calcImc = pesoResultado / (alturaResultado * alturaResultado)
-                var calcimcr = calcImc * 10000
+                var calcimcr = calcImc * 1
                 var message = ""
 
 
@@ -104,8 +106,7 @@ class MainActivity : AppCompatActivity() {
                     AlertDialog.Builder(this@MainActivity)
                         .setTitle("Resultado")
                         .setMessage(
-                            "$sexo " +
-                                    "\nSeu IMC: ${calcimcr.toInt()}" +
+                            "Seu IMC: ${calcimcr.toInt()}" +
                                     "\n Classificação: $message" +
                                     "\n ${if (calcimcr < 20) {
                                         "Você esta abaixo do peso"
